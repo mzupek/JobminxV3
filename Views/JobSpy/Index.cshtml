@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Job Spy</h2>
+
+<div id="content">
+    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+        <li class="active"><a href="#full" data-toggle="tab">Full Job Description</a></li>
+        <li><a href="#url" data-toggle="tab">URL of Job Description</a></li>
+       
+    </ul>
+    <div id="my-tab-content" class="tab-content">
+        <div class="tab-pane active" id="full">
+            <h3>Enter a Full Job Description</h3>
+            @using (Html.BeginForm("FullText", "Jobspy", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <textarea class="form-control" name="full"></textarea>
+                <input type="submit" class="btn btn-success btn-lg" value="SPY" />
+            }
+        </div>
+        <div class="tab-pane" id="url">
+           
+            <h3>Enter a URL of a Job Description Below</h3>
+            @using (Html.BeginForm("UrlString", "Jobspy", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+
+                <input type="text" class="form-control" name="url" />
+                <input type="submit" class="btn btn-success btn-lg" value="SPY" />
+            }
+        
+    </div>
+</div>
+</div>
